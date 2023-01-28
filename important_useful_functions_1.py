@@ -3,6 +3,21 @@
 def mm2inch(mm):
     return mm / 25.4
 
+# to use RGB color format for matplotlib
+def rgba2mpl(r,g,b,a=1.0):
+    # build from 255,0,255,1 new form 1,0,1,1
+    output = (0.0, 0.0, 0.0, 1.0)
+
+    output = (r/255, g/255, b/255, a)
+
+    return output
+
+def rgb2hex(r,g,b):
+    # build from 255,0,255,1 new hex color code
+
+    return "#{:02x}{:02x}{:02x}".format(r,g,b)
+
+# to label pie chart
 def pie_label_function(pct):
     return ('%1.1f%%' % pct) if pct > 4 else ''
 
